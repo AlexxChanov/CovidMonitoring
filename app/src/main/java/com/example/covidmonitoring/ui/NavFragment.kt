@@ -1,6 +1,7 @@
 package com.example.covidmonitoring.ui
 
 import android.hardware.camera2.params.BlackLevelPattern.COUNT
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +11,11 @@ import com.example.covidmonitoring.R
 import kotlinx.android.synthetic.main.fragment_navigation.*
 
 
-class NavFragment: Fragment() {
+class NavFragment : Fragment() {
+
+    private var mediaPlayer: MediaPlayer? = null
+    private var mediaPlayer2: MediaPlayer? = null
+    private var flag = false
 
 
     override fun onCreateView(
@@ -18,43 +23,69 @@ class NavFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_navigation , container, false)
+        return inflater.inflate(R.layout.fragment_navigation, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        if (flag == true) {
+            mediaPlayer2?.stop()
+        }
+
+        mediaPlayer = MediaPlayer.create(view.context, R.raw.begining_final)
+        mediaPlayer2 = MediaPlayer.create(view.context, R.raw.dancing_coffins_ending)
+
+        mediaPlayer?.start()
+        mediaPlayer?.setLooping(true)
+
 
         val countryDataFragment = CountryDataFragment()
 
         btnGlobalData.setOnClickListener {
+            mediaPlayer?.stop()
+            mediaPlayer2?.start()
+            mediaPlayer2?.setLooping(true)
+            flag = true
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.navHost, GlobalFragment())
                 ?.addToBackStack(null)
                 ?.commit()
         }
         btnRussiaData.setOnClickListener {
-            countryDataFragment.arguments=Bundle().also {
-                it.putString("key", "Russia")
-            };
+            mediaPlayer?.stop()
+            mediaPlayer2?.start()
+            mediaPlayer2?.setLooping(true)
+            flag = true
+            countryDataFragment.arguments = Bundle().also {
+                it.putInt("key", 1)
+            }
             fragmentManager?.beginTransaction()
-                ?.replace(R.id.navHost, CountryDataFragment())
+                ?.replace(R.id.navHost, countryDataFragment)
                 ?.addToBackStack(null)
                 ?.commit()
         }
         btnUSAData.setOnClickListener {
-            countryDataFragment.arguments=Bundle().also {
-                it.putString("key", "USA")
+            mediaPlayer?.stop()
+            mediaPlayer2?.start()
+            mediaPlayer2?.setLooping(true)
+            flag = true
+            countryDataFragment.arguments = Bundle().also {
+                it.putInt("key", 2)
             }
             fragmentManager?.beginTransaction()
-                ?.replace(R.id.navHost, CountryDataFragment())
+                ?.replace(R.id.navHost, countryDataFragment)
                 ?.addToBackStack(null)
                 ?.commit()
         }
         btnItalyData.setOnClickListener {
-            countryDataFragment.arguments=Bundle().also {
-                it.putString("key", "Italy")
+            mediaPlayer?.stop()
+            mediaPlayer2?.start()
+            mediaPlayer2?.setLooping(true)
+            flag = true
+            countryDataFragment.arguments = Bundle().also {
+                it.putInt("key", 3)
             }
             fragmentManager?.beginTransaction()
-                ?.replace(R.id.navHost, CountryDataFragment())
+                ?.replace(R.id.navHost, countryDataFragment)
                 ?.addToBackStack(null)
                 ?.commit()
         }

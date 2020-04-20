@@ -23,7 +23,7 @@ class GlobalFragment : Fragment(), CoroutineScope {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_global , container, false)
+        return inflater.inflate(R.layout.fragment_global, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,14 +33,17 @@ class GlobalFragment : Fragment(), CoroutineScope {
             val global = repository.getSummary().await()
 
 
-            loader.visibility=View.GONE
+            loader.visibility = View.GONE
             data.visibility = View.VISIBLE
 
             global?.let {
-                newConfirmed.text = getString(R.string.new_confirmed_template).format(it.newConfirmed)
+                newConfirmed.text =
+                    getString(R.string.new_confirmed_template).format(it.newConfirmed)
                 newDeaths.text = getString(R.string.new_deaths_template).format(it.newDeaths)
-                newRecovered.text = getString(R.string.new_recovered_template).format(it.newRecovered)
-                totalConfirmed.text = getString(R.string.total_confirmed_template).format(it.totalConfirmed)
+                newRecovered.text =
+                    getString(R.string.new_recovered_template).format(it.newRecovered)
+                totalConfirmed.text =
+                    getString(R.string.total_confirmed_template).format(it.totalConfirmed)
             }
         }
     }

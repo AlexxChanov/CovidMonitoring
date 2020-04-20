@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <LinearLayout
         android:id="@+id/data"
@@ -14,37 +15,45 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginBottom="20dp"
         >
 
         <Button
             android:id="@+id/btnGlobalData"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:textStyle="bold|italic"
-            android:text="Global" />
+            android:text="Global"
+            android:layout_marginBottom="4dp"
+            />
 
         <Button
             android:id="@+id/btnRussiaData"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:textStyle="bold|italic"
-            android:text="Russia" />
+            android:text="Russia"
+            android:layout_marginBottom="4dp"/>
         <Button
             android:id="@+id/btnUSAData"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="25sp"
             android:textStyle="bold|italic"
-            android:text="USA" />
+            android:text="USA"
+            android:layout_marginBottom="4dp"/>
         <Button
             android:id="@+id/btnItalyData"
-            android:layout_width="wrap_content"
+            android:background="@drawable/button_background"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
             android:textSize="25sp"

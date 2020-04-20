@@ -5,10 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/unnamed">
-
-
-
+    android:background="@drawable/niggas_coffin"
+    >
     <LinearLayout
         android:id="@+id/data"
         android:layout_width="wrap_content"
@@ -26,7 +24,11 @@
             android:id="@+id/newConfirmed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="#fff"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
             android:textSize="25sp"
             android:textStyle="bold|italic"
             tools:text="New confirmed: 10000" />
@@ -35,7 +37,11 @@
             android:id="@+id/newDeaths"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="#fff"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
             android:textSize="25sp"
             android:textStyle="bold|italic"
             tools:text="New deaths: 10000" />
@@ -44,7 +50,11 @@
             android:id="@+id/newRecovered"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="#fff"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
             android:textSize="25sp"
             android:textStyle="bold|italic"
             tools:text="New recovered: 10000" />
@@ -53,7 +63,11 @@
             android:id="@+id/totalConfirmed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="#fff"
+            android:shadowColor="#000000"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="5"
             android:textSize="25sp"
             android:textStyle="bold|italic"
             tools:text="Total confirmed: 10000" />

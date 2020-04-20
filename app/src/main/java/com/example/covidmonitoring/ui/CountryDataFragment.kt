@@ -16,31 +16,33 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
-class CountryDataFragment: Fragment(), CoroutineScope {
-    override val coroutineContext: CoroutineContext=Dispatchers.Main
+class CountryDataFragment : Fragment(), CoroutineScope {
+
+
+    override val coroutineContext: CoroutineContext = Dispatchers.Main
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_country_data,container,false)
+
+        return inflater.inflate(R.layout.fragment_country_data, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val repo = CovidRepository()
-        val savedValue=arguments?.getString("key") ?: ""
 
-        when(savedValue){
+        when (arguments?.getInt("key") ?: "") {
 
-            "Russia"->launch{
+            1 -> launch {
                 val countryCases = repo.getRussiaData().await()
 
 
-                loader.visibility=View.GONE
-                countryData.visibility=View.VISIBLE
+                loader.visibility = View.GONE
+                countryData.visibility = View.VISIBLE
 
-                countryCases?.let{
+                countryCases?.let {
                     country.text = it.country
                     cases.text = getString(R.string.total_confirmed_template).format(it.cases)
 
@@ -48,14 +50,14 @@ class CountryDataFragment: Fragment(), CoroutineScope {
 
             }
 
-            "USA"->launch{
+            2 -> launch {
                 val countryCases = repo.getUSAData().await()
 
 
-                loader.visibility=View.GONE
-                countryData.visibility=View.VISIBLE
+                loader.visibility = View.GONE
+                countryData.visibility = View.VISIBLE
 
-                countryCases?.let{
+                countryCases?.let {
                     country.text = it.country
                     cases.text = getString(R.string.total_confirmed_template).format(it.cases)
 
@@ -63,21 +65,20 @@ class CountryDataFragment: Fragment(), CoroutineScope {
 
             }
 
-            "Italy"->launch{
+            else -> launch {
                 val countryCases = repo.getItalyData().await()
 
 
-                loader.visibility=View.GONE
-                countryData.visibility=View.VISIBLE
+                loader.visibility = View.GONE
+                countryData.visibility = View.VISIBLE
 
-                countryCases?.let{
+                countryCases?.let {
                     country.text = it.country
                     cases.text = getString(R.string.total_confirmed_template).format(it.cases)
 
                 }
 
             }
-
 
 
         }
