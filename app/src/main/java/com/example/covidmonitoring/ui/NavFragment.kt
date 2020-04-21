@@ -31,7 +31,7 @@ class NavFragment : Fragment() {
             mediaPlayer2?.stop()
         }
 
-        mediaPlayer = MediaPlayer.create(view.context, R.raw.begining_final)
+        mediaPlayer = MediaPlayer.create(view.context, R.raw.dancing_coffins_begining)
         mediaPlayer2 = MediaPlayer.create(view.context, R.raw.dancing_coffins_ending)
 
         mediaPlayer?.start()
@@ -89,5 +89,12 @@ class NavFragment : Fragment() {
                 ?.addToBackStack(null)
                 ?.commit()
         }
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        mediaPlayer?.stop()
+
     }
 }
