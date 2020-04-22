@@ -4,5 +4,5 @@ This application allows you to find out General data on the current situation wi
 ![alt text](covidMonitoringMainScreen.png "Основной экран")
 
 
-![alt text](covidMonitoringSecondScreen.png"Второй экран")
+![screenshot](covidMonitoringSecondScreen.png"Второй экран")
 
