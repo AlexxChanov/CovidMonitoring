@@ -6,3 +6,22 @@ This application allows you to find out General data on the current situation wi
 
 ![screenshot](covidMonitoringSecondScreen.png "Второй экран")
 
+
+
+This application was created by the rule of one activity.
+
+
+The following technologies are used:
+
+
+-retrofit.2
+
+
+-json
+
+
+-restful api
+
+
+-multithreading
+
