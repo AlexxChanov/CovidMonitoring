@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:background="@android:color/holo_blue_light"
+    android:orientation="vertical"
+    android:padding="4dp">
+
+    <TextView
+        android:id="@+id/countryName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Country"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryNewConfirmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryTotalConfirmed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryNewDeaths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryTotalDeaths"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryNewRecovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/countryTotalRecovered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@android:color/white"
+        tools:text="New confirmed: 10New confirmed: 1"
+        tools:textColor="@android:color/black" />
+
+
+</LinearLayout>

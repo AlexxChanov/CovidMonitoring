@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">CovidMonitoring</string>
+    <string name="code">Country code: %s</string>
     <string name="new_confirmed_template">New confirmed: %d</string>
-    <string name="new_deaths_template">New deaths: %d</string>
-    <string name="new_recovered_template">New recovered: %d</string>
     <string name="total_confirmed_template">Total confirmed: %d</string>
+    <string name="new_deaths_template">New deaths: %d</string>
+   ф <string name="total_deaths_template">Total deaths: %d</string>
+    <string name="new_recovered_template">New recovered: %d</string>
+    <string name="total_recovered_template">Total recovered: %d</string>
     <string name="total_cases">%d total cases </string>
     <string name="covid19_monitoring">COVID19 Monitoring</string>
 </resources>

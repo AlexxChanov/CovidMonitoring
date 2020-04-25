@@ -30,20 +30,24 @@ class GlobalFragment : Fragment(), CoroutineScope {
         val repository = CovidRepository()
 
         launch {
-            val global = repository.getSummary().await()
+            val summary = repository.getSummary().await()
 
 
             loader.visibility = View.GONE
             data.visibility = View.VISIBLE
 
-            global?.let {
-                newConfirmed.text =
-                    getString(R.string.new_confirmed_template).format(it.newConfirmed)
-                newDeaths.text = getString(R.string.new_deaths_template).format(it.newDeaths)
-                newRecovered.text =
-                    getString(R.string.new_recovered_template).format(it.newRecovered)
-                totalConfirmed.text =
-                    getString(R.string.total_confirmed_template).format(it.totalConfirmed)
+            summary?.let {
+                it.global?.let {
+                    newConfirmed.text =
+                        getString(R.string.new_confirmed_template).format(it.newConfirmed)
+                    newDeaths.text = getString(R.string.new_deaths_template).format(it.newDeaths)
+                    newRecovered.text =
+                        getString(R.string.new_recovered_template).format(it.newRecovered)
+                    totalConfirmed.text =
+                        getString(R.string.total_confirmed_template).format(it.totalConfirmed)
+                }
+
+                countriesList.adapter = CountriesGlobalDataAdapter(it.countries)
             }
         }
     }

@@ -13,9 +13,9 @@ import kotlinx.android.synthetic.main.fragment_navigation.*
 
 class NavFragment : Fragment() {
 
-    private var mediaPlayer: MediaPlayer? = null
-    private var mediaPlayer2: MediaPlayer? = null
-    private var flag = false
+//    private var mediaPlayer: MediaPlayer? = null
+//    private var mediaPlayer2: MediaPlayer? = null
+//    private var flag = false
 
 
     override fun onCreateView(
@@ -27,34 +27,34 @@ class NavFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        if (flag == true) {
-            mediaPlayer2?.stop()
-        }
-
-        mediaPlayer = MediaPlayer.create(view.context, R.raw.dancing_coffins_begining)
-        mediaPlayer2 = MediaPlayer.create(view.context, R.raw.dancing_coffins_ending)
-
-        mediaPlayer?.start()
-        mediaPlayer?.setLooping(true)
+//        if (flag == true) {
+//            mediaPlayer2?.stop()
+//        }
+//
+//        mediaPlayer = MediaPlayer.create(view.context, R.raw.dancing_coffins_begining)
+//        mediaPlayer2 = MediaPlayer.create(view.context, R.raw.dancing_coffins_ending)
+//
+//        mediaPlayer?.start()
+//        mediaPlayer?.setLooping(true)
 
 
         val countryDataFragment = CountryDataFragment()
 
         btnGlobalData.setOnClickListener {
-            mediaPlayer?.stop()
-            mediaPlayer2?.start()
-            mediaPlayer2?.setLooping(true)
-            flag = true
+//            mediaPlayer?.stop()
+//            mediaPlayer2?.start()
+//            mediaPlayer2?.setLooping(true)
+//            flag = true
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.navHost, GlobalFragment())
                 ?.addToBackStack(null)
                 ?.commit()
         }
         btnRussiaData.setOnClickListener {
-            mediaPlayer?.stop()
-            mediaPlayer2?.start()
-            mediaPlayer2?.setLooping(true)
-            flag = true
+//            mediaPlayer?.stop()
+//            mediaPlayer2?.start()
+//            mediaPlayer2?.setLooping(true)
+//            flag = true
             countryDataFragment.arguments = Bundle().also {
                 it.putInt("key", 1)
             }
@@ -64,10 +64,10 @@ class NavFragment : Fragment() {
                 ?.commit()
         }
         btnUSAData.setOnClickListener {
-            mediaPlayer?.stop()
-            mediaPlayer2?.start()
-            mediaPlayer2?.setLooping(true)
-            flag = true
+//            mediaPlayer?.stop()
+//            mediaPlayer2?.start()
+//            mediaPlayer2?.setLooping(true)
+//            flag = true
             countryDataFragment.arguments = Bundle().also {
                 it.putInt("key", 2)
             }
@@ -77,10 +77,10 @@ class NavFragment : Fragment() {
                 ?.commit()
         }
         btnItalyData.setOnClickListener {
-            mediaPlayer?.stop()
-            mediaPlayer2?.start()
-            mediaPlayer2?.setLooping(true)
-            flag = true
+//            mediaPlayer?.stop()
+//            mediaPlayer2?.start()
+//            mediaPlayer2?.setLooping(true)
+//            flag = true
             countryDataFragment.arguments = Bundle().also {
                 it.putInt("key", 3)
             }
@@ -92,9 +92,9 @@ class NavFragment : Fragment() {
 
     }
 
-    override fun onPause() {
-        super.onPause()
-        mediaPlayer?.stop()
-
-    }
+//    override fun onPause() {
+//        super.onPause()
+//        mediaPlayer?.stop()
+//
+//    }
 }

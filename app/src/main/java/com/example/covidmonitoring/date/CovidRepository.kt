@@ -1,5 +1,6 @@
 package com.example.covidmonitoring.date
 
+import android.util.Log
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
@@ -19,7 +20,7 @@ class CovidRepository : CoroutineScope {
         covidApi.getSummary()
             .execute()
             .body()
-            ?.global
+
     }
 
     fun getRussiaData() = async {
@@ -28,12 +29,14 @@ class CovidRepository : CoroutineScope {
             .body()
             ?.last()
     }
+
     fun getUSAData() = async {
         covidApi.getByCountry("united-states")
             .execute()
             .body()
             ?.last()
     }
+
     fun getItalyData() = async {
         covidApi.getByCountry("italy")
             .execute()
