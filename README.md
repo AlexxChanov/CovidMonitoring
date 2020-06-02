@@ -23,5 +23,5 @@ The following technologies are used:
 -restful api
 
 
--multithreading
+-multithreading.
 
